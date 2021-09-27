@@ -13,4 +13,8 @@ Window {
         height: 50
         text: "Press me"
     }
+
+    AlarmSwitch {
+        anchors.right: parent.right
+    }
 }

@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>assets/clock-switch-off-selected.svg</file>
+        <file>assets/clock-switch-on-disable.svg</file>
+        <file>assets/clock-switch-off-disable.svg</file>
+        <file>assets/clock-switch-on-selected.svg</file>
+    </qresource>
+</RCC>

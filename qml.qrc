@@ -2,5 +2,6 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>Button.qml</file>
+        <file>AlarmSwitch.qml</file>
     </qresource>
 </RCC>
