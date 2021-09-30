@@ -1,20 +1,32 @@
 import QtQuick 2.15
 import QtQuick.Window 2.15
+import QtQuick.Controls 2.15
 
 Window {
-    width: 640
-    height: 480
+    width: 480
+    height: 800
     visible: true
     title: qsTr("Hello World")
-    color: "#1B2F46"
+    color: "#151B2E"
 
-    Button {
-        width: 150
-        height: 50
-        text: "Press me"
+    StackView {
+        id: stackView
+        anchors.fill: parent
+        initialItem: pageHome
     }
 
-    AlarmSwitch {
-        anchors.right: parent.right
+    Component {
+        id: pageHome
+        PageHome {
+            onOpenAlarmPage: stackView.push(pageAlarm)
+        }
+    }
+
+    Component {
+        id: pageAlarm
+        PageAlarm {
+            onAlarmSet: stackView.pop()
+            onBack: stackView.pop()
+        }
     }
 }

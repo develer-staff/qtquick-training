@@ -3,5 +3,9 @@
         <file>main.qml</file>
         <file>Button.qml</file>
         <file>AlarmSwitch.qml</file>
+        <file>PageAlarm.qml</file>
+        <file>PageHome.qml</file>
+        <file>ButtonArrow.qml</file>
+        <file>BackButton.qml</file>
     </qresource>
 </RCC>

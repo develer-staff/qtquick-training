@@ -4,5 +4,8 @@
         <file>assets/clock-switch-on-disable.svg</file>
         <file>assets/clock-switch-off-disable.svg</file>
         <file>assets/clock-switch-on-selected.svg</file>
+        <file>assets/clock-btn-arrow.svg</file>
+        <file>assets/clock-btn-arrow (hover).svg</file>
+        <file>assets/clock-btn-back-active.svg</file>
     </qresource>
 </RCC>
