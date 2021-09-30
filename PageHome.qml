@@ -3,6 +3,7 @@ import QtQuick 2.0
 Item {
     id: root
     signal openAlarmPage
+    signal openAlarmListPage
 
     Button {
         width: 190
@@ -23,5 +24,18 @@ Item {
         anchors.rightMargin: 18
         text: "Alarm"
         onClicked: root.openAlarmPage()
+    }
+
+    MouseArea {
+        width: 50
+        height: 50
+        y: 33
+        x: 403
+
+        Image {
+            source: "assets/223-bell.svg"
+            anchors.centerIn: parent
+        }
+        onClicked: root.openAlarmListPage()
     }
 }

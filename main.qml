@@ -19,6 +19,7 @@ Window {
         id: pageHome
         PageHome {
             onOpenAlarmPage: stackView.push(pageAlarm)
+            onOpenAlarmListPage: stackView.push(pageAlarmList)
         }
     }
 
@@ -26,6 +27,13 @@ Window {
         id: pageAlarm
         PageAlarm {
             onAlarmSet: stackView.pop()
+            onBack: stackView.pop()
+        }
+    }
+
+    Component {
+        id: pageAlarmList
+        PageAlarmList {
             onBack: stackView.pop()
         }
     }

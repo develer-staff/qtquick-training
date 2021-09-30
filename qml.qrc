@@ -7,5 +7,6 @@
         <file>PageHome.qml</file>
         <file>ButtonArrow.qml</file>
         <file>BackButton.qml</file>
+        <file>PageAlarmList.qml</file>
     </qresource>
 </RCC>

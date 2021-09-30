@@ -7,5 +7,6 @@
         <file>assets/clock-btn-arrow.svg</file>
         <file>assets/clock-btn-arrow (hover).svg</file>
         <file>assets/clock-btn-back-active.svg</file>
+        <file>assets/223-bell.svg</file>
     </qresource>
 </RCC>
