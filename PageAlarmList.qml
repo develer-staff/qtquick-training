@@ -18,18 +18,6 @@ Item {
         onClicked: root.back()
     }
 
-    ListModel {
-        id: listModel
-        ListElement {
-            datetime: "12:45"
-            active: false
-        }
-        ListElement {
-            datetime: "7:15"
-            active: true
-        }
-    }
-
     Text {
         id: header
         font.pixelSize: 20
@@ -45,7 +33,7 @@ Item {
         anchors.top: header.bottom
         anchors.bottom: parent.bottom
         anchors.horizontalCenter: parent.horizontalCenter
-        model: listModel
+        model: clockObject
         clip: true
         delegate: Item {
             width: 424
@@ -56,7 +44,7 @@ Item {
                 anchors.verticalCenter: parent.verticalCenter
                 font.pixelSize: 40
                 color: "#9FAAB0"
-                text: model.datetime
+                text: Qt.formatTime(model.datetime, "hh:mm")
             }
 
             AlarmSwitch {
