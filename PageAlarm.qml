@@ -1,4 +1,4 @@
-import QtQuick 2.0
+import QtQuick 2.15
 
 Item {
     id: root
@@ -37,7 +37,7 @@ Item {
                 horizontalAlignment: Text.AlignHCenter
                 color: "#FCB647"
                 font.pixelSize: 120
-                text: "00"
+                text: Qt.formatTime(alarmSetButton.hourMinute, "hh")
             }
 
             Text {
@@ -50,12 +50,20 @@ Item {
         }
 
         ButtonArrow {
-            onClicked: console.log("plus")
+            onClicked: {
+                var tmp = alarmSetButton.hourMinute
+                tmp.setHours(tmp.getHours() + 1)
+                alarmSetButton.hourMinute = tmp
+            }
         }
 
         ButtonArrow {
             rotation: 180
-            onClicked: console.log("minus")
+            onClicked: {
+                var tmp = alarmSetButton.hourMinute
+                tmp.setHours(tmp.getHours() - 1)
+                alarmSetButton.hourMinute = tmp
+            }
         }
     }
 
@@ -76,7 +84,7 @@ Item {
                 horizontalAlignment: Text.AlignHCenter
                 color: "#FCB647"
                 font.pixelSize: 120
-                text: "00"
+                text: Qt.formatTime(alarmSetButton.hourMinute, "mm")
             }
 
             Text {
@@ -88,22 +96,35 @@ Item {
             }
         }
         ButtonArrow {
-            onClicked: console.log("plus")
+            onClicked: {
+                var tmp = alarmSetButton.hourMinute
+                tmp.setMinutes(tmp.getMinutes() + 1)
+                alarmSetButton.hourMinute = tmp
+            }
         }
 
         ButtonArrow {
             rotation: 180
-            onClicked: console.log("minus")
+            onClicked: {
+                var tmp = alarmSetButton.hourMinute
+                tmp.setMinutes(tmp.getMinutes() - 1)
+                alarmSetButton.hourMinute = tmp
+            }
         }
     }
 
     Button {
+        id: alarmSetButton
+        property date hourMinute: new Date()
         width: 434
         height: 64
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottom: parent.bottom
         anchors.bottomMargin: 30
         text: "Set alarm"
-        onClicked: root.alarmSet()
+        onClicked: {
+            clockObject.addAlarm(alarmSetButton.hourMinute)
+            root.alarmSet()
+        }
     }
 }

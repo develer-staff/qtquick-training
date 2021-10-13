@@ -43,3 +43,10 @@ QHash<int, QByteArray> ClockObject::roleNames() const
     };
     return roles;
 }
+
+void ClockObject::addAlarm(const QDateTime& alarm)
+{
+    beginInsertRows(QModelIndex(), m_alarms.size(), m_alarms.size());
+    m_alarms.append({ alarm, true });
+    endInsertRows();
+}
